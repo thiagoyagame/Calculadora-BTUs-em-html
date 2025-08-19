@@ -1,0 +1,32 @@
+<form id="frmList">
+	<fieldset>
+		
+		<legend style="color:blue;" align="center"> <b>  CALCULADORA DE BTUs  </b> </legend>
+		
+<form id="frmList">
+        <label for="capacidade"> <b> Escolha a capacidade do ar-condicionado </b> </label>
+		<input name = "listcapacidades" list="capacidades">
+        <datalist id="capacidades">
+            <option value="9000">
+            <option value="12000">
+            <option value="18000">
+            <option value="24000">      
+        </datalist>  
+        <input type="submit" value="Calcular">
+		<input type="reset" value= "Limpar">
+</form>
+<p id="resultado"></p>
+
+<script>
+function recarregarAPagina(){
+    window.location.reload();
+} 
+</script>
+
+<script>
+        document.getElementById("frmList").onsubmit = function () {
+            let frmLst = document.getElementById('frmList').elements;
+             document.getElementById("resultado").innerHTML = "Compativel com: " + frmLst['listcapacidades'].value / 600 + " metros quadrados";
+             return false;
+         };
+</script>     
